@@ -14,14 +14,20 @@ services:
       DOCKER_INFLUXDB_INIT_PASSWORD: "${INFLUXDB_PASSWORD:-changeme}"
       DOCKER_INFLUXDB_INIT_ORG:       "${INFLUXDB_ORG:-my-org}"
       DOCKER_INFLUXDB_INIT_BUCKET:    "${INFLUXDB_BUCKET:-metrics}"
-      DOCKER_INFLUXDB_INIT_RETENTION: 30d
+      DOCKER_INFLUXDB_INIT_RETENTION: "30d"
       DOCKER_INFLUXDB_INIT_ADMIN_TOKEN: "${INFLUXDB_TOKEN:-super-secret-token}"
     volumes:
       - influxdb-data:/var/lib/influxdb2     # time-series data
       - influxdb-config:/etc/influxdb2       # config, tokens
+    # JMeter can connect to influxdb on port 8086
+    # Configure JMeter with InfluxDB Backend Listener:
+    # - URL: http://localhost:8086
+    # - Token: super-secret-token
+    # - Org: my-org
+    # - Bucket: metrics
 
   grafana:
-    image: grafana/grafana-oss:11.0.0
+    image: grafana/grafana:latest
     container_name: grafana
     depends_on:
       - influxdb
@@ -35,6 +41,7 @@ services:
     volumes:
       - grafana-data:/var/lib/grafana                 # dashboards, plugins
       - ./grafana/provisioning:/etc/grafana/provisioning  # auto-datasource
+      - ./grafana/dashboards:/var/lib/grafana/dashboards  # dashboard files
 
 volumes:
   influxdb-data:
