@@ -19,16 +19,12 @@ services:
       DOCKER_INFLUXDB_INIT_ADMIN_TOKEN: "super-secret-token"
     volumes:
       - influxdb-data:/var/lib/influxdb2     # time-series data
-      - influxdb-config:/etc/influxdb2       # config, tokens
-      - ./influxdb/init:/docker-entrypoint-initdb.d  # initialization scripts
     healthcheck:
       test: ["CMD", "curl", "--fail", "http://localhost:8086/ping"]
       interval: 10s
       timeout: 5s
       retries: 5
     # JMeter can now connect directly to influxdb on localhost:8086
-    # since you've configured /etc/hosts to point influxdb to 127.0.0.1
-    # and we're using host network mode
 
   grafana:
     image: grafana/grafana:latest
@@ -44,10 +40,8 @@ services:
       GF_USERS_ALLOW_SIGN_UP:      "false"
     volumes:
       - grafana-data:/var/lib/grafana                 # dashboards, plugins
-      - ./grafana/provisioning:/etc/grafana/provisioning  # auto-datasource
-      - ./grafana/dashboards:/var/lib/grafana/dashboards  # dashboard files
+
 
 volumes:
   influxdb-data:
-  influxdb-config:
   grafana-data:
