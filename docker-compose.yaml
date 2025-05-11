@@ -19,6 +19,12 @@ services:
     volumes:
       - influxdb-data:/var/lib/influxdb2     # time-series data
       - influxdb-config:/etc/influxdb2       # config, tokens
+      - ./influxdb/init:/docker-entrypoint-initdb.d  # initialization scripts
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://localhost:8086/ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
     # JMeter can connect to influxdb on port 8086
     # Configure JMeter with InfluxDB Backend Listener:
     # - URL: http://localhost:8086
