@@ -2,7 +2,7 @@ version: "3.9"
 
 services:
   influxdb:
-    image: influxdb:2.7-alpine
+    image: influxdb:2.7
     container_name: influxdb
     restart: unless-stopped
     ports:
@@ -10,12 +10,13 @@ services:
     environment:
       # one-time initial setup
       DOCKER_INFLUXDB_INIT_MODE: setup
-      DOCKER_INFLUXDB_INIT_USERNAME: "${INFLUXDB_USER:-admin}"
-      DOCKER_INFLUXDB_INIT_PASSWORD: "${INFLUXDB_PASSWORD:-changeme}"
-      DOCKER_INFLUXDB_INIT_ORG:       "${INFLUXDB_ORG:-my-org}"
-      DOCKER_INFLUXDB_INIT_BUCKET:    "${INFLUXDB_BUCKET:-metrics}"
+      DOCKER_INFLUXDB_INIT_USERNAME: "admin"
+      DOCKER_INFLUXDB_INIT_PASSWORD: "changeme"
+      INFLUXDB_HTTP_LOG_ENABLED: "true"
+      DOCKER_INFLUXDB_INIT_ORG:       "my-org"
+      DOCKER_INFLUXDB_INIT_BUCKET:    "jmeter"
       DOCKER_INFLUXDB_INIT_RETENTION: "30d"
-      DOCKER_INFLUXDB_INIT_ADMIN_TOKEN: "${INFLUXDB_TOKEN:-super-secret-token}"
+      DOCKER_INFLUXDB_INIT_ADMIN_TOKEN: "super-secret-token"
     volumes:
       - influxdb-data:/var/lib/influxdb2     # time-series data
       - influxdb-config:/etc/influxdb2       # config, tokens
@@ -25,12 +26,9 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
-    # JMeter can connect to influxdb on port 8086
-    # Configure JMeter with InfluxDB Backend Listener:
-    # - URL: http://localhost:8086
-    # - Token: super-secret-token
-    # - Org: my-org
-    # - Bucket: metrics
+    # JMeter can now connect directly to influxdb on localhost:8086
+    # since you've configured /etc/hosts to point influxdb to 127.0.0.1
+    # and we're using host network mode
 
   grafana:
     image: grafana/grafana:latest
