@@ -5,6 +5,12 @@
 - Docker Compose
 - JMeter
 
+## Running Headless JMeter from Command Line
+
+```bash
+jmeter -n -t ./petstore.jmx -l ./results.jtl
+```
+
 ## Running Grafana
 
 ```bash

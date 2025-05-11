@@ -1,0 +1,35 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1746978605159,895,Add User,200,OK,Thread Group 1-1,text,true,,398,405,1,1,https://petstore.swagger.io/v2/user,893,0,758
+1746978609066,135,Get User,200,OK,Thread Group 1-1,text,true,,518,162,1,1,https://petstore.swagger.io/v2/user/user001,135,0,0
+1746978609228,130,Delete User,200,OK,Thread Group 1-1,text,true,,386,248,1,1,https://petstore.swagger.io/v2/user/user001,130,0,0
+1746978609361,134,Add User,200,OK,Thread Group 1-1,text,true,,380,409,1,1,https://petstore.swagger.io/v2/user,134,0,0
+1746978612501,142,Get User,404,Not Found,Thread Group 1-1,text,false,No results for path: $['email'],396,162,1,1,https://petstore.swagger.io/v2/user/user002,140,0,0
+1746978612647,133,Delete User,200,OK,Thread Group 1-1,text,true,,386,248,1,1,https://petstore.swagger.io/v2/user/user002,132,0,0
+1746978612785,134,Add User,200,OK,Thread Group 1-1,text,true,,380,415,1,1,https://petstore.swagger.io/v2/user,133,0,0
+1746978615924,131,Get User,200,OK,Thread Group 1-1,text,true,,510,162,1,1,https://petstore.swagger.io/v2/user/user003,131,0,0
+1746978616057,128,Delete User,200,OK,Thread Group 1-1,text,true,,386,248,1,1,https://petstore.swagger.io/v2/user/user003,128,0,0
+1746978616187,131,Add User,200,OK,Thread Group 1-1,text,true,,380,413,1,1,https://petstore.swagger.io/v2/user,131,0,0
+1746978619324,134,Get User,404,Not Found,Thread Group 1-1,text,false,No results for path: $['email'],396,162,1,1,https://petstore.swagger.io/v2/user/user004,133,0,0
+1746978619459,137,Delete User,200,OK,Thread Group 1-1,text,true,,386,248,1,1,https://petstore.swagger.io/v2/user/user004,136,0,0
+1746978619597,131,Add User,200,OK,Thread Group 1-1,text,true,,380,407,1,1,https://petstore.swagger.io/v2/user,131,0,0
+1746978622738,139,Get User,200,OK,Thread Group 1-1,text,true,,502,162,1,1,https://petstore.swagger.io/v2/user/user005,138,0,0
+1746978622882,132,Delete User,404,Not Found,Thread Group 1-1,,false,,292,248,1,1,https://petstore.swagger.io/v2/user/user005,132,0,0
+1746978623017,131,Add User,200,OK,Thread Group 1-1,text,true,,380,415,1,1,https://petstore.swagger.io/v2/user,131,0,0
+1746978626155,130,Get User,404,Not Found,Thread Group 1-1,text,false,No results for path: $['email'],396,162,1,1,https://petstore.swagger.io/v2/user/user006,130,0,0
+1746978626287,129,Delete User,200,OK,Thread Group 1-1,text,true,,386,248,1,1,https://petstore.swagger.io/v2/user/user006,129,0,0
+1746978626418,133,Add User,200,OK,Thread Group 1-1,text,true,,380,411,1,1,https://petstore.swagger.io/v2/user,131,0,0
+1746978629556,138,Get User,404,Not Found,Thread Group 1-1,text,false,No results for path: $['email'],396,162,1,1,https://petstore.swagger.io/v2/user/user007,137,0,0
+1746978629696,137,Delete User,200,OK,Thread Group 1-1,text,true,,386,248,1,1,https://petstore.swagger.io/v2/user/user007,136,0,0
+1746978629835,138,Add User,200,OK,Thread Group 1-1,text,true,,380,409,1,1,https://petstore.swagger.io/v2/user,136,0,0
+1746978632981,133,Get User,200,OK,Thread Group 1-1,text,true,,504,162,1,1,https://petstore.swagger.io/v2/user/user008,133,0,0
+1746978633126,130,Delete User,404,Not Found,Thread Group 1-1,,false,,292,248,1,1,https://petstore.swagger.io/v2/user/user008,130,0,0
+1746978633256,130,Add User,200,OK,Thread Group 1-1,text,true,,380,419,1,1,https://petstore.swagger.io/v2/user,130,0,0
+1746978636391,133,Get User,200,OK,Thread Group 1-1,text,true,,514,162,1,1,https://petstore.swagger.io/v2/user/user009,132,0,0
+1746978636529,131,Delete User,404,Not Found,Thread Group 1-1,,false,,292,248,1,1,https://petstore.swagger.io/v2/user/user009,131,0,0
+1746978636666,137,Add User,200,OK,Thread Group 1-1,text,true,,380,417,1,1,https://petstore.swagger.io/v2/user,135,0,0
+1746978639809,135,Get User,200,OK,Thread Group 1-1,text,true,,512,162,1,1,https://petstore.swagger.io/v2/user/user010,134,0,0
+1746978639946,132,Delete User,200,OK,Thread Group 1-1,text,true,,386,248,1,1,https://petstore.swagger.io/v2/user/user010,131,0,0
+1746978640081,132,Add User,200,OK,Thread Group 1-1,text,true,,381,414,1,1,https://petstore.swagger.io/v2/user,131,0,0
+1746978643216,135,Get User,200,OK,Thread Group 1-1,text,true,,509,162,1,1,https://petstore.swagger.io/v2/user/user011,135,0,0
+1746978643353,131,Delete User,200,OK,Thread Group 1-1,text,true,,386,248,1,1,https://petstore.swagger.io/v2/user/user011,131,0,0
+1746978643486,135,Add User,200,OK,Thread Group 1-1,text,true,,381,418,1,1,https://petstore.swagger.io/v2/user,135,0,0
